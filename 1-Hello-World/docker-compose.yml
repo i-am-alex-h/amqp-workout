@@ -1,0 +1,17 @@
+version: '3.7'
+services:
+    broker:
+        image: rabbitmq:3.11-management
+        ports:
+            - "5672:5672"
+            - "15672:15672"
+    producer:
+        build:
+            context: ./producer
+        volumes:
+            - ./producer/app:/source
+    consumer:
+        build:
+            context: ./consumer
+        volumes:
+            - ./consumer/app:/source
