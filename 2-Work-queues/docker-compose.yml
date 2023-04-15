@@ -8,14 +8,14 @@ services:
         build:
             context: ../dotnet-sdk-tail
         volumes:
-            - ./producer/app:/source
+            - ./producer:/source
     consumer-a:
         build:
             context: ../dotnet-sdk-tail
         volumes:
-            - ./consumer-a/app:/source
+            - ./consumer-a:/source
     consumer-b:
         build:
             context: ../dotnet-sdk-tail
         volumes:
-            - ./consumer-b/app:/source
+            - ./consumer-b:/source

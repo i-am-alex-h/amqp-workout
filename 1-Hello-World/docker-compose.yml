@@ -8,9 +8,9 @@ services:
         build:
             context: ../dotnet-sdk-tail
         volumes:
-            - ./producer/app:/source
+            - ./producer:/source
     consumer:
         build:
             context: ../dotnet-sdk-tail
         volumes:
-            - ./consumer/app:/source
+            - ./consumer:/source
