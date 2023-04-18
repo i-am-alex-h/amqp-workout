@@ -1,9 +1,12 @@
 services:
     broker:
         image: rabbitmq:3.11-management
+        hostname: oryctolagus
         ports:
             - "5672:5672"
             - "15672:15672"
+        volumes:
+            - ./volumes/broker_data:/var/lib/rabbitmq
     producer:
         image: mcr.microsoft.com/dotnet/sdk:6.0
         working_dir: /source
