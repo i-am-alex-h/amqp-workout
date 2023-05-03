@@ -7,12 +7,14 @@ services:
     producer:
         image: mcr.microsoft.com/dotnet/sdk:6.0
         working_dir: /source
+        init: true
         command: [ "tail", "-f", "/dev/null" ]
         volumes:
             - ./producer/app:/source
     consumer:
         image: mcr.microsoft.com/dotnet/sdk:6.0
         working_dir: /source
+        init: true
         command: [ "tail", "-f", "/dev/null" ]
         volumes:
             - ./consumer/app:/source
