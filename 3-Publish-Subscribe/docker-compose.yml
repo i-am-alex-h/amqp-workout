@@ -7,15 +7,18 @@ services:
     producer:
         build:
             context: ../dotnet-sdk-tail
+        init: true
         volumes:
             - ./producer/app:/source
     consumer-a:
         build:
             context: ../dotnet-sdk-tail
+        init: true
         volumes:
             - ./consumer-a/app:/source
     consumer-b:
         build:
             context: ../dotnet-sdk-tail
+        init: true
         volumes:
             - ./consumer-b/app:/source

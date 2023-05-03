@@ -7,10 +7,12 @@ services:
     producer:
         build:
             context: ../dotnet-sdk-tail
+        init: true
         volumes:
             - ./producer/app:/source
     consumer:
         build:
             context: ../dotnet-sdk-tail
+        init: true
         volumes:
             - ./consumer/app:/source
