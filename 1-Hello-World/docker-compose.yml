@@ -5,12 +5,14 @@ services:
             - "5672:5672"
             - "15672:15672"
     producer:
-        build:
-            context: ./producer
+        image: mcr.microsoft.com/dotnet/sdk:6.0
+        working_dir: /source
+        command: [ "tail", "-f", "/dev/null" ]
         volumes:
             - ./producer/app:/source
     consumer:
-        build:
-            context: ./consumer
+        image: mcr.microsoft.com/dotnet/sdk:6.0
+        working_dir: /source
+        command: [ "tail", "-f", "/dev/null" ]
         volumes:
             - ./consumer/app:/source
