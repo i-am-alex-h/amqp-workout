@@ -7,15 +7,18 @@ services:
     producer:
         build:
             context: ./producer/image-def
+        init: true
         volumes:
             - ./producer/app:/source
     consumer-a:
         build:
             context: ./consumer-a/image-def
+        init: true
         volumes:
             - ./consumer-a/app:/source
     consumer-b:
         build:
             context: ./consumer-b/image-def
+        init: true
         volumes:
             - ./consumer-b/app:/source
