@@ -6,11 +6,11 @@ services:
             - "15672:15672"
     producer:
         build:
-            context: ./producer
+            context: ./producer/image-def
         volumes:
             - ./producer/app:/source
     consumer:
         build:
-            context: ./consumer
+            context: ./consumer/image-def
         volumes:
             - ./consumer/app:/source
