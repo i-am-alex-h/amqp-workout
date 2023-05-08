@@ -5,17 +5,23 @@ services:
             - "5672:5672"
             - "15672:15672"
     producer:
-        build:
-            context: ./producer
+        image: mcr.microsoft.com/dotnet/sdk:6.0
+        working_dir: /source
+        init: true
+        command: [ "tail", "-f", "/dev/null" ]
         volumes:
             - ./producer/app:/source
     consumer-a:
-        build:
-            context: ./consumer-a
+        image: mcr.microsoft.com/dotnet/sdk:6.0
+        working_dir: /source
+        init: true
+        command: [ "tail", "-f", "/dev/null" ]
         volumes:
             - ./consumer-a/app:/source
     consumer-b:
-        build:
-            context: ./consumer-b
+        image: mcr.microsoft.com/dotnet/sdk:6.0
+        working_dir: /source
+        init: true
+        command: [ "tail", "-f", "/dev/null" ]
         volumes:
             - ./consumer-b/app:/source
