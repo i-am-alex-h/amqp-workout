@@ -8,7 +8,7 @@ A Docker implementation of the first 3 RabbitMQ tutorials.
 
 Change to tutorial directory, then
 ```
-docker compose up --build --remove-orphans
+docker compose up --remove-orphans
 ```
 
 ## Management console
